@@ -1,0 +1,80 @@
+/home/sarvash_r/Are_UBNN_KWS/tb/top/tb_top.sv:91: warning: task definition for "apply_reset" has an empty port declaration list!
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/sarvash_r/Are_UBNN_KWS/src/ecc/secded_decoder.sv:55: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+VCD info: dumpfile outputs/simulation/enhanced_waveform.vcd opened for output.
+============================================================
+  ARe-UBNN-KWS Verification  0
+============================================================
+[TB] Reset complete.
+[PASS] T1_normal_inference  sum=128 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T2_zero_activation_PE0  sum=240 kw=1 SEC=0 DED=0 pe_act=0xfffe
+[PASS] T3_nonzero_activation_PE0  sum=1 kw=1 SEC=0 DED=0 pe_act=0x0001
+[PASS] T4_single_bit_fault_bit_0  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_1  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_2  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_3  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_4  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_5  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_6  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_7  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_8  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_9  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_10  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_11  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_12  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_13  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_14  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_15  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_16  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_17  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_18  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_19  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_20  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T4_single_bit_fault_bit_21  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T5_double_bit_fault  sum=128 kw=1 SEC=0 DED=1 pe_act=0xffff
+[PASS] T6_mixed_sparse  sum=128 kw=1 SEC=0 DED=0 pe_act=0x00ff
+[PASS] T7_fault_during_inference  sum=128 kw=1 SEC=1 DED=0 pe_act=0xffff
+[PASS] T8_sparse_plus_fault  sum=64 kw=1 SEC=1 DED=0 pe_act=0x5555
+[PASS] T9a_all_ones  sum=256 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T9b_all_zeros  sum=0 kw=0 SEC=0 DED=0 pe_act=0x0000
+[PASS] T9c_zero_threshold  sum=0 kw=1 SEC=0 DED=0 pe_act=0x0000
+[PASS] T10_random_0  sum=47 kw=0 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_1  sum=78 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_2  sum=56 kw=0 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_3  sum=73 kw=0 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_4  sum=76 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_5  sum=75 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_6  sum=52 kw=0 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_7  sum=102 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_8  sum=57 kw=1 SEC=0 DED=0 pe_act=0xffff
+[PASS] T10_random_9  sum=45 kw=0 SEC=0 DED=0 pe_act=0xffff
+
+================================================
+  ARe-UBNN-KWS VERIFICATION SUMMARY
+  TOTAL  : 42
+  PASSED : 42
+  FAILED : 0
+================================================
+  *** ALL TESTS PASSED ***
+================================================
+[TB] Done at 3826000 ns

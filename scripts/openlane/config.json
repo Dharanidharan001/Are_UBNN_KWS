@@ -1,0 +1,32 @@
+{
+    "DESIGN_NAME": "are_ubnn_kws_enhanced_wrapper",
+    "VERILOG_FILES": [
+        "dir::../../src/compute/popcount.sv",
+        "dir::../../src/compute/unipolar_pe.sv",
+        "dir::../../src/compute/pe_array.sv",
+        "dir::../../src/baseline/accumulator.sv",
+        "dir::../../src/baseline/threshold_unit.sv",
+        "dir::../../src/ecc/secded_encoder.sv",
+        "dir::../../src/ecc/secded_decoder.sv",
+        "dir::../../src/memory/protected_weight_memory.sv",
+        "dir::../../src/power/activation_detector.sv",
+        "dir::../../src/power/icg.sv",
+        "dir::../../src/top/are_ubnn_kws_top.sv",
+        "dir::../../src/top/are_ubnn_kws_enhanced_wrapper.sv"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 100.0,
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 520 520",
+    "FP_CORE_UTIL": 30,
+    "PL_TARGET_DENSITY_PCT": 30,
+    "STD_CELL_LIBRARY": "sky130_fd_sc_hd",
+    "PNR_SDC_FILE": "dir::../../constraints/are_ubnn_kws.sdc",
+    "SIGNOFF_SDC_FILE": "dir::../../constraints/are_ubnn_kws.sdc",
+    "GRT_ADJUSTMENT": 0.2,
+    "GRT_OVERFLOW_ITERS": 60,
+    "DRT_THREADS": 4,
+    "RUN_ANTENNA_REPAIR": true,
+    "PL_RESIZER_HOLD_MAX_BUFFER_PCT": 50,
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.05
+}

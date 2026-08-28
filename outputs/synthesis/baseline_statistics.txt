@@ -1,0 +1,51 @@
+﻿=== are_ubnn_kws_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1721 wires
+     4119 wire bits
+      135 public wires
+     2533 public wire bits
+       18 ports
+      601 port bits
+     1801 cells
+       16   $_ANDNOT_
+      301   $_AND_
+       33   $_MUX_
+      717   $_NAND_
+       34   $_NOR_
+        1   $_NOT_
+       17   $_ORNOT_
+       21   $_OR_
+        9   $_SDFFE_PN0P_
+       81   $_SDFF_PN0_
+       50   $_XNOR_
+      486   $_XOR_
+       35   $scopeinfo
+
+13.28. Executing CHECK pass (checking for obvious problems).
+Checking module are_ubnn_kws_top...
+Found and reported 0 problems.
+
+14. Executing OPT pass (performing simple optimizations).
+
+14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module are_ubnn_kws_top.
+
+14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\are_ubnn_kws_top'.
+Computing hashes of 1801 cells of `\are_ubnn_kws_top'.
+Finding duplicate cells in `\are_ubnn_kws_top'.
+Removed a total of 0 cells.
+
+14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \are_ubnn_kws_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \are_ubnn_kws_top.
+Performed a total of 0 changes.
+
+14.5. Executing OPT_MERGE pass (detect identical cells).

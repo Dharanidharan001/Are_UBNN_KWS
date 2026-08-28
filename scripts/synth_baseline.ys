@@ -1,0 +1,15 @@
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/compute/popcount.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/compute/unipolar_pe.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/compute/pe_array.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/baseline/accumulator.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/baseline/threshold_unit.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/ecc/secded_encoder.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/ecc/secded_decoder.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/memory/protected_weight_memory.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/power/activation_detector.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/power/icg.sv 
+read_verilog -sv E:/Are_UBNN_KWS/self/scripts/../src/top/are_ubnn_kws_top.sv 
+chparam -set ENABLE_ENHANCED 0 are_ubnn_kws_top 
+synth -top are_ubnn_kws_top -flatten 
+opt -full 
+stat 
