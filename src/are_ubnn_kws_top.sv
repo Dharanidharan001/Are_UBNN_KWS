@@ -1,27 +1,9 @@
-//=============================================================================
-// Project: ARe-UBNN-KWS
-// Module:  are_ubnn_kws_top
-// Description:
-//   Top-level ASIC implementation of the Adaptive Reliable Unipolar Binary
-//   Neural Network (UBNN) Accelerator for Edge Keyword Spotting (KWS).
-//
-// KEY INNOVATIONS & HIGHLIGHTS:
-//   1. Unipolar BNN dot-product datapath (16 PEs: AND + POPCOUNT).
-//   2. Inline SECDED Hamming (22, 16) error correction directly in the weight
-//      memory read interface with zero additional pipeline stages.
-//   3. Fine-grained dynamic sparsity-aware per-PE clock gating using ASIC ICG cells.
-//   4. Baseline accumulator datapath completely preserved without modification.
-//   5. Active inference fault injection support for reliability demonstration.
-//   6. Rich observability for waveforms, GTKWave, and hardware telemetry.
-//=============================================================================
-
 `timescale 1ns/1ps
 
 module are_ubnn_kws_top (
     input  logic         clk,
     input  logic         rst_n,
 
-    // Execution & configuration interface
     input  logic         start_inference,
     input  logic         load_weight,
     input  logic [3:0]   weight_pe_sel,
@@ -31,21 +13,18 @@ module are_ubnn_kws_top (
     input  logic         bypass_clock_gating,
     input  logic         test_en,
 
-    // Active inference fault injection interface
     input  logic         fault_inject_en,
     input  logic [3:0]   fault_pe_sel,
     input  logic [4:0]   fault_bit1,
     input  logic [4:0]   fault_bit2,
     input  logic         fault_is_double,
 
-    // Inference classification outputs
     output logic         busy,
     output logic         done,
     output logic         kws_output,
     output logic [7:0]   accumulator_val,
     output logic [8:0]   frame_sum,
 
-    // Verification & telemetry observability hooks
     output logic [15:0]  pe_enable,
     output logic [15:0]  pe_gated_clocks,
     output logic [4:0]   pe_active_count,
@@ -59,7 +38,6 @@ module are_ubnn_kws_top (
     output logic [4:0]   monitored_syndrome
 );
 
-    // Controller signals
     logic [2:0] current_state;
     logic       ctrl_weight_wr_en;
     logic       ctrl_pe_eval_en;
@@ -81,7 +59,6 @@ module are_ubnn_kws_top (
         .accum_clear     (ctrl_accum_clear)
     );
 
-    // Protected Weight Memory Subsystem (SECDED Encoder + Storage + SECDED Decoder)
     logic [255:0] corrected_weights;
 
     protected_weight_memory u_weight_subsystem (
@@ -104,7 +81,6 @@ module are_ubnn_kws_top (
         .monitored_syndrome     (monitored_syndrome)
     );
 
-    // Fine-Grained Activity Detector (Sparsity Detection: all-zero check)
     logic [15:0] dynamic_pe_en;
 
     pe_activity_detector u_activity_detector (
@@ -115,13 +91,11 @@ module are_ubnn_kws_top (
 
     assign pe_enable = dynamic_pe_en;
 
-    // 16 Processing Element Array with per-PE ASIC ICG cells
     logic [79:0] pe_reg_results;
     logic [79:0] pe_comb_out;
     logic [4:0]  active_count;
     logic [15:0] gated_clks;
 
-    // Effective gating enable: qualified with evaluation state
     logic [15:0] qualified_pe_en;
     assign qualified_pe_en = dynamic_pe_en & {16{ctrl_pe_eval_en | bypass_clock_gating}};
 
@@ -138,7 +112,6 @@ module are_ubnn_kws_top (
         .pe_active_count (active_count)
     );
 
-    // Active PE count directly reflecting frame activation sparsity
     logic [4:0] top_active_count;
     popcount16 u_frame_active_pe_counter (
         .in_data (dynamic_pe_en),
@@ -150,9 +123,6 @@ module are_ubnn_kws_top (
     assign pe_active_count = top_active_count;
     assign pe_gated_clocks = gated_clks;
 
-    // Sparsity-qualified results feeding the baseline accumulator:
-    // When a PE is gated (all-zero activation), its mathematical dot-product contribution
-    // is 0, while active PEs pass their latched partial sums.
     logic [79:0] effective_pe_results;
     genvar j;
     generate
@@ -161,7 +131,6 @@ module are_ubnn_kws_top (
         end
     endgenerate
 
-    // Baseline Accumulator Subsystem (architecturally unmodified)
     logic [7:0] accumulated_sum;
     logic [8:0] current_frame_sum;
 
@@ -178,7 +147,6 @@ module are_ubnn_kws_top (
     assign accumulator_val = accumulated_sum;
     assign frame_sum       = current_frame_sum;
 
-    // Threshold Decision Unit
     threshold_unit u_threshold (
         .accumulator_val (accumulated_sum),
         .threshold_val   (threshold_in),
