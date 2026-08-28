@@ -1,0 +1,64 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: SKY130 Integrated Clock Gating Transient Analysis
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vpwr                                       1.8
+vgnd                                         0
+clk                                          0
+gate                                       1.8
+test                                         0
+en_qual                                    1.8
+latch_d                                    1.8
+latch_q                                    1.8
+gclk                               1.30529e-09
+gclk_bar                                   1.8
+vpwr_int                                   1.8
+b_inv#branch                                 0
+b_latch#branch                               0
+b_or#branch                                  0
+vtest#branch                                 0
+ven#branch                                   0
+vclk#branch                                  0
+vss#branch                            1.81e-12
+vdd#branch                        -1.79057e-12
+
+
+No. of Data Rows : 4107
+t_clk_rise          =  5.750000e-10
+t_gclk_rise         =  6.017500e-10
+v_gclk_active_max   =  1.800000e+00 at=  1.551400e-08
+v_gclk_gated_max    =  1.305288e-09 at=  4.561000e-08
+i_active_avg        =  -3.600553e-06 from=  5.000000e-09 to=  2.500200e-08
+i_gated_avg         =  -1.790568e-12 from=  3.000000e-08 to=  5.000000e-08
+t_prop_delay = 2.675000e-11
+v_gclk_active_max = 1.800000e+00
+v_gclk_gated_max = 1.305288e-09
+p_active = 6.480995e-06
+p_gated = 3.223022e-12
+==========================================================
+      NGSPICE SKY130 ICG CELL CHARACTERIZATION RESULTS   
+==========================================================
+ Operating Frequency   : 100 MHz (10.0 ns Period)
+ Standard Cell Target  : sky130_fd_sc_hd__dlclkp_1
+ Supply Voltage (VDD)  : 1.80 V
+ Temperature           : 25 C
+ Output Load           : 20 fF
+----------------------------------------------------------
+t_prop_delay = 2.675000e-11
+v_gclk_active_max = 1.800000e+00
+v_gclk_gated_max = 1.305288e-09
+p_active = 6.480995e-06
+p_gated = 3.223022e-12
+==========================================================
+Note: Simulation executed from .control section 

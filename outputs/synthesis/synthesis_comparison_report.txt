@@ -1,0 +1,26 @@
+=============================================================================
+             ARe-UBNN-KWS vs BASELINE SYNTHESIS COMPARISON REPORT
+=============================================================================
+Technology Target : SKY130 High Density (sky130_fd_sc_hd__tt_025C_1v80)
+Synthesis Engine  : Yosys Open Synthesis Suite
+
+-----------------------------------------------------------------------------
+ METRIC                       BASELINE ARCHITECTURE    ENHANCED ARCHITECTURE
+-----------------------------------------------------------------------------
+ Target Design                baseline_ubnn_kws_top    are_ubnn_kws_top
+ Total Standard Cell Count    1866                      6399
+ Total Chip Area (um^2)       23810.336000                 60324.105600
+ Inline SECDED Protection     None                     Hamming (22, 16) Codec
+ Weight Fault Resilience      Vulnerable (0-bit)       1-bit Correct, 2-bit Detect
+ Dynamic Power Reduction      None (Always ON)         Sparsity-aware ICG Gating
+ Pipeline Latency Added       0 stages                 0 stages (Unmodified Datapath)
+-----------------------------------------------------------------------------
+
+RELIABILITY & EFFICIENCY ANALYSIS:
+  - The Enhanced design adds inline SECDED Hamming (22, 16) protection directly
+    at the weight memory read interface, providing 100% single-bit correction
+    and double-bit detection during active inference without pipeline stalls.
+  - The fine-grained activity detector gates inactive Processing Elements when
+    their activation vector is all-zero (sparse frames), eliminating dynamic
+    clock and register toggling.
+=============================================================================
