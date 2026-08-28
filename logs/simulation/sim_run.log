@@ -1,0 +1,89 @@
+VCD info: dumpfile /mnt/c/Users/sethu/Downloads/vlsi/ARe_UBNN_KWS/outputs/waveforms/are_ubnn_kws.vcd opened for output.
+--------------------------------------------------------
+   STARTING SIMULATION: ARe-UBNN-KWS HARNESS
+--------------------------------------------------------
+
+========================================================
+   TEST: POPCOUNT-16 STANDALONE VERIFICATION
+========================================================
+[ENV] Initializing Popcount Test Environment...
+[ENV] Generating and executing 56 popcount test vectors...
+
+========================================================
+   VERIFICATION SUMMARY: POPCOUNT-16 UNIT
+========================================================
+ Total Assertions Tested: 56
+ Passed Matches         : 56
+ Detected Mismatches    : 0
+ STATUS: [PASS] All assertions verified successfully.
+========================================================
+
+[TEST PASSED] popcount16 successfully verified against golden model.
+
+========================================================
+   TEST: UNIPOLAR-PE STANDALONE VERIFICATION
+========================================================
+[ENV] Initializing Unipolar PE Verification...
+
+========================================================
+   VERIFICATION SUMMARY: UNIPOLAR-PE UNIT
+========================================================
+ Total Assertions Tested: 16
+ Passed Matches         : 16
+ Detected Mismatches    : 0
+ STATUS: [PASS] All assertions verified successfully.
+========================================================
+
+[TEST PASSED] unipolar_pe successfully verified against golden model.
+
+========================================================
+   TEST: SECDED HAMMING (22, 16) CODEC VERIFICATION
+========================================================
+[ENV] Initializing SECDED Hamming (22, 16) Verification...
+
+========================================================
+   VERIFICATION SUMMARY: SECDED HAMMING (22, 16) CODEC
+========================================================
+ Total Assertions Tested: 308
+ Passed Matches         : 308
+ Detected Mismatches    : 0
+ STATUS: [PASS] All assertions verified successfully.
+========================================================
+
+[TEST PASSED] SECDED successfully corrected all single-bit errors and detected all double-bit errors.
+
+========================================================
+   TEST: FULL ARe-UBNN-KWS ACCELERATOR SYSTEM TEST
+========================================================
+
+========================================================
+   STARTING FULL ACCELERATOR SYSTEM INFERENCE SUITE
+========================================================
+[ACCEL TEST 1/8] Running: NORMAL_INFERENCE
+  -> Active PEs: 16/16 | Acc: 64 | Threshold: 40 | KWS: 1 | SEC: 0 | DED: 0
+[ACCEL TEST 2/8] Running: ALL_ZERO_ACTIVATION
+  -> Active PEs: 0/16 | Acc: 0 | Threshold: 10 | KWS: 0 | SEC: 0 | DED: 0
+[ACCEL TEST 3/8] Running: SPARSE_ACTIVATION
+  -> Active PEs: 4/16 | Acc: 12 | Threshold: 16 | KWS: 0 | SEC: 0 | DED: 0
+[ACCEL TEST 4/8] Running: DENSE_ACTIVATION
+  -> Active PEs: 16/16 | Acc: 128 | Threshold: 100 | KWS: 1 | SEC: 0 | DED: 0
+[ACCEL TEST 5/8] Running: SINGLE_BIT_WEIGHT_FAULT
+  -> Active PEs: 16/16 | Acc: 64 | Threshold: 30 | KWS: 1 | SEC: 1 | DED: 0
+[ACCEL TEST 6/8] Running: DOUBLE_BIT_WEIGHT_FAULT
+  -> Active PEs: 16/16 | Acc: 62 | Threshold: 30 | KWS: 1 | SEC: 0 | DED: 1
+[ACCEL TEST 7/8] Running: FAULT_PLUS_SPARSE
+  -> Active PEs: 4/16 | Acc: 22 | Threshold: 10 | KWS: 1 | SEC: 1 | DED: 0
+[ACCEL TEST 8/8] Running: MULTIPLE_PE_MIXED_SPARSITY
+  -> Active PEs: 8/16 | Acc: 44 | Threshold: 45 | KWS: 0 | SEC: 0 | DED: 0
+
+========================================================
+   VERIFICATION SUMMARY: FULL ACCELERATOR SYSTEM
+========================================================
+ Total Assertions Tested: 109
+ Passed Matches         : 109
+ Detected Mismatches    : 0
+ STATUS: [PASS] All assertions verified successfully.
+========================================================
+
+[TEST PASSED] ARe-UBNN-KWS accelerator successfully verified across all scenarios.
+[TB_TOP] Simulation completed cleanly.
