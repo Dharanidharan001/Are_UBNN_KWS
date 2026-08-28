@@ -1,0 +1,36 @@
+#=============================================================================
+# Yosys Synthesis Script: Baseline UBNN-KWS Architecture (Unprotected)
+# Target: SKY130 High Density (sky130_fd_sc_hd)
+#=============================================================================
+
+# Read SKY130 Standard Cell Library
+read_liberty -lib constraints/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read Synthesizable Baseline RTL Modules
+read_verilog -sv src/popcount16.sv
+read_verilog -sv src/unipolar_pe.sv
+read_verilog -sv src/accumulator.sv
+read_verilog -sv src/threshold_unit.sv
+read_verilog -sv src/controller.sv
+read_verilog -sv src/baseline_ubnn_kws_top.sv
+
+# Elaborate Top Module
+hierarchy -check -top baseline_ubnn_kws_top
+
+# High-Level Synthesis Optimization
+synth -top baseline_ubnn_kws_top
+
+# Sequential Mapping to SKY130 D-Flip-Flops
+dfflibmap -liberty constraints/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Combinational Mapping to SKY130 Standard Cells
+abc -liberty constraints/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Netlist Clean-Up
+clean
+
+# Generate Area & Cell Count Statistics
+stat -liberty constraints/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Write Gate-Level Netlist
+write_verilog -noattr outputs/netlist/are_ubnn_kws_baseline.netlist.v
